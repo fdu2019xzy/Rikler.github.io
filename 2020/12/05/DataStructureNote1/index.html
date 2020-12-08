@@ -453,7 +453,7 @@ A(m,n) =\left\{
 <ul>
 <li>边差分<br>考虑一个经典问题，<strong>给出两点x, y 将其路径上的边权加1，最后给出所有边权。</strong></li>
 </ul>
-<p><img src="https://img2020.cnblogs.com/blog/1756083/202004/1756083-20200429121732302-1807574001.png" srcset="/CsBlog/img/loading.gif" alt="图源:https://www.cnblogs.com/zhwer/p/12800475.html"></p>
+<p><img src="https://s3.ax1x.com/2020/12/08/r99w60.png" srcset="/CsBlog/img/loading.gif" alt="图源:https://www.cnblogs.com/zhwer/p/12800475.html"></p>
 <p>我们看这张图，数组 c[k] 是差分数组只不过我们是自下而上加的，为不影响其他子树的结果，我们的统计在回溯过程中完成，因而是自下而上的，那么这个边权修改过程就可以看做是 c[x]++, c[y]++, 然后 根节点到lca(x, y)被加了两次，我们都要减去 c[lca(x, y)] -= 2</p>
 <p>既然是差分那么对于权值的更新，我们就可以如同前缀和一样计算，这不过这里的”前缀”是所有的子树权值，我们将所有子树权值收集起来到父节点上。</p>
 <ul>
@@ -474,7 +474,7 @@ A(m,n) =\left\{
     &#125;
 &#125;</code></pre>
 <ul>
-<li>点差分<br>点差分和边差分差不多，但这回每个点都代表的是自己了。<br><img src="https://img2020.cnblogs.com/blog/1756083/202004/1756083-20200429121614916-299376969.png" srcset="/CsBlog/img/loading.gif" alt="图源:https://www.cnblogs.com/zhwer/p/12800475.html"></li>
+<li>点差分<br>点差分和边差分差不多，但这回每个点都代表的是自己了。<br><img src="https://s3.ax1x.com/2020/12/08/r990XV.png" srcset="/CsBlog/img/loading.gif" alt="图源:https://www.cnblogs.com/zhwer/p/12800475.html"></li>
 </ul>
 <p>和边差分不同的是，这回lca不需要减2了，因为每个点代表的就是自己，在统计的时候 x, y 路径上是有 lca(x, y) 的，因而只需要减去一次重复计算即可。但这边lca在计算”前缀和”的时候会 +1，差分数组某一地方值的变动会影响到后面所有的值（这就是差分数组的精髓和意义所在）但lca的父亲并不应该 +1 所以我们要将 c[fa[lca(x,y)]]— 这个过程之后，我们的差分数组就完成了。<br>最后自下而上的收集一下，就能得到所有节点的权值了。</p>
 <ul>
