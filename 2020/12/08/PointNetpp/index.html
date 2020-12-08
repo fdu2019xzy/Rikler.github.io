@@ -251,7 +251,7 @@
 <h3 id="多尺度组合-multi-scale-grouping-MSG"><a href="#多尺度组合-multi-scale-grouping-MSG" class="headerlink" title="多尺度组合 (multi-scale grouping, MSG)"></a>多尺度组合 (multi-scale grouping, MSG)</h3><p>对于同一个点多次采用不同的Grouping，过PointNet之后将特征 concat，增加了很多计算量，耗时。</p>
 <h3 id="多分辨率组合（multi-resolution-grouping-MRG）"><a href="#多分辨率组合（multi-resolution-grouping-MRG）" class="headerlink" title="多分辨率组合（multi-resolution grouping, MRG）"></a>多分辨率组合（multi-resolution grouping, MRG）</h3><p>相当于多层之间采用了不同的分辨率，先用小的grouping通过两层正常提取出的特征，和一次大的grouping提取出的特征进行一个concat，组合了两种分辨率的信息。</p>
 <hr>
-<h2 id="实验效果"><a href="#实验效果" class="headerlink" title="实验效果"></a>实验效果</h2><p><img src="/CsBlog/CsBlog/2020/12/08/PointNetpp/img/PointNet++/res.png" srcset="/CsBlog/img/loading.gif" alt></p>
+<h2 id="实验效果"><a href="#实验效果" class="headerlink" title="实验效果"></a>实验效果</h2><p><img src="https://s3.ax1x.com/2020/12/08/rpkt39.png" srcset="/CsBlog/img/loading.gif" alt></p>
 <p>从实验效果上我们可以看出其准确率明显好于单一的PointNet，并且在使用了 MSG 和 MRG 后对于大量点集的鲁棒性明显提升了。</p>
 
             </div>
